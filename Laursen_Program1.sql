@@ -1,4 +1,4 @@
-
+set server output;
 
 DECLARE
 
