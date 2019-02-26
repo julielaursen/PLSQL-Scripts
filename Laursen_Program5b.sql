@@ -20,7 +20,7 @@ BEGIN
 		DBMS_OUTPUT.PUT_LINE('Payment Number : ' || lv_total_payments);
 		DBMS_OUTPUT.PUT_LINE('Due date : ' || lv_due_date);
 		DBMS_OUTPUT.PUT_LINE('Payment amount : ' || lv_monthly_payment);
-		DBMS_OUTPUT.PUT_LINE('Donation balance : ' || lv_donation_balance);
+		DBMS_OUTPUT.PUT_LINE('Donation balance :' || TO_CHAR(lv_donation_balance, '$9999.99'));
 		
 	END LOOP;
 
