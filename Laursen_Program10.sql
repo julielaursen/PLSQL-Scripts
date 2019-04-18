@@ -1,6 +1,6 @@
 --Not done yet, include a NO DATA FOUND EXCEPTION
 CREATE OR REPLACE PACKAGE shopper_pkg IS
-    PROCEDURE shopper_search_pp 
+	PROCEDURE shopper_search_pp 
 		(p_ShopperID IN bb_shopper.idshopper%TYPE,
 		 p_firstname OUT bb_shopper.firstname%TYPE,
 		 p_lastname OUT bb_shopper.lastname%TYPE,
@@ -26,7 +26,7 @@ CREATE OR REPLACE PACKAGE BODY shopper_pkg
 		 p_city OUT bb_shopper.city%TYPE,
 		 p_st OUT bb_shopper.st%TYPE,
 		 p_phone OUT bb_shopper.phone%TYPE,
-		 p_email OUT bb_shopper.email%TYPE);
+		 p_email OUT bb_shopper.email%TYPE)
 		IS
 		BEGIN
 			SELECT firstname, lastname, city, st, phone, email
@@ -40,7 +40,7 @@ CREATE OR REPLACE PACKAGE BODY shopper_pkg
 		 p_city OUT bb_shopper.city%TYPE,
 		 p_st OUT bb_shopper.st%TYPE,
 		 p_phone OUT bb_shopper.phone%TYPE,
-		 p_email OUT bb_shopper.email%TYPE);
+		 p_email OUT bb_shopper.email%TYPE)
 		IS
 		BEGIN
 			SELECT firstname, lastname, city, st, phone, email
@@ -48,5 +48,5 @@ CREATE OR REPLACE PACKAGE BODY shopper_pkg
 				FROM BB_SHOPPER
 				WHERE lastname = p_lastname;
 		END;
-	END;
+	END shopper_pkg;
 	/
