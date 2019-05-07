@@ -9,7 +9,7 @@ CURSOR basketitem_cur IS
    FROM bb_basket
    WHERE idbasket = :NEW.idbasket;
 lv_total_sales NUMBER(8,2);
-lv_total_qty NUMBER(8,2);
+lv_total_qty NUMBER(10);
 BEGIN
    FOR basketitem_rec in basketitem_cur LOOP
 		IF basketitem_rec.orderplaced = 1 THEN
