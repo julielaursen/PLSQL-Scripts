@@ -17,8 +17,7 @@ BEGIN
 		  lv_total_sales = lv_total_sales + 1;
 		END IF;
 	UPDATE bb_sales_sum
-	  SET lv_total_sales = lv_total_sales + 1;
-	  SET lv_total_qty = lv_total_qty + 1;
+	  SET lv_total_qty = lv_total_qty + 1
 	  WHERE product_id = basketitem_rec.idproduct;
 	END LOOP;
 END;
