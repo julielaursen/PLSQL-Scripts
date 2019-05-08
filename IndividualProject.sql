@@ -9,7 +9,9 @@ then select AVG(column) FROM table_name;
 2)
 select min(fine_amount) from crime_charges;
 3)
-	
+select cr.crime_ID, cr.classification, cr.date_charged, cr.hearing date, and number of days from crimes cr
+between the date charged and the hearing date.
+
 4)
 SELECT c.last, cr.crime_id, cc.charge_id FROM criminals c, crimes cr, crime_charges cc WHERE c.criminal_id = cr.criminal_id AND cr.crime_id = cc.crime_id;	
 	
