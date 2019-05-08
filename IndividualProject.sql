@@ -19,7 +19,9 @@ SELECT c.last, cr.crime_id, cc.charge_id FROM criminals c, crimes cr, crime_char
 select o.last, o. first, c.crime_id from officers o, crime_officer co, crimes c where crimes > avg
 
 6)
-select c.last, c.first from criminals c, crimes cr where c.criminal_id = cr.criminal_id and crimes > avg
+select c.last, c.first from criminals c, crimes cr where c.criminal_id = cr.criminal_id and cr.crimes > (SELECT AVG(crimes) FROM *)
+
+
 	--PROCEDURE city_jail_sp
 		--(p_query IN whatever_table_name NUMBER 
 --	 
