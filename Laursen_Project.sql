@@ -20,11 +20,11 @@ AS
 		IF p_query = 1 THEN 
 		-- for rec in loop, then dbms output,then end loop?
 			Open p_cursor FOR SELECT AVG(COUNT(*)) average FROM crime_officers GROUP BY officer_id;
-			dbms_output.put_line('query 1');
-		END IF;		
-		-- ELSE IF p_query = 2 THEN
-			-- Open p_cursor FOR SELECT min(fine_amount) FROM crime_charges;
-		-- END IF;
+		ELSIF p_query = 2 THEN
+			Open p_cursor FOR SELECT min(fine_amount) FROM crime_charges;
+		ELSIF p_query = 3 THEN
+			Open p_cursor FOR SELECT crime_id, classification, date_charged, Hearing_date, (hearing_date - date_charged) as days FROM crimes WHERE (hearing_date - date_charged) > 14;
+		END IF;
 			-- lv_output := SELECT AVG(COUNT(*)) FROM crime_officers GROUP BY officer_id;
 		-- IF lv_query - 2 THEN lv_output := SELECT min(fine_amount) FROM crime_charges;
 		-- IF lv_query = 3 THEN lv_output := SELECT crime_id, classification, date_charged, Hearing_date, (hearing_date - date_charged) as days FROM crimes WHERE (hearing_date - date_charged) > 14;
