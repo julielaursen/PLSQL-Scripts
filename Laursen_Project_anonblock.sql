@@ -16,7 +16,6 @@ DECLARE
 	
 BEGIN
 
-
 	CITY_JAIL_PKG.City_Jail_sp(1, p_cur);
 	fetch p_cur into output;
 	dbms_output.put_line(output);
@@ -25,8 +24,8 @@ BEGIN
     fetch p_cur into output;
     dbms_output.put_line(output);
 	
-	--CITY_JAIL_PKG.City_Jail_sp(3, p_cur);
-    --fetch p_cur into output;
+	CITY_JAIL_PKG.City_Jail_sp(3, p_cur);
+    --fetch p_cur into (p_crime_id, p_classification, p_date_charged, p_hearing_date, p_days);
     --dbms_output.put_line(p_crime_id, p_classification, p_date_charged, p_hearing_date, p_days);
   
 END;
